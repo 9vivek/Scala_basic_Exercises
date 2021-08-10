@@ -272,3 +272,490 @@ object solution {
 
 }
 }
+
+/**
+   * Q.1 WAP to create a list 
+   */
+   
+   
+object Solution {
+    def main(args: Array[String]) {
+        var a:List[Int]=List(1,2,3,4)
+        println("The element of the list are:" + a)
+    }
+}
+
+/**
+   * Q.2 WAP to add single element and multiple elements to a given listbuffer/List
+   */
+   
+object Scala_List
+{
+  import scala.collection.mutable.ListBuffer
+  def main(args: Array[String]): Unit = 
+ {
+  //As a List is immutable we use ListBuffer
+  var colors = new ListBuffer[String]()
+  println("Add Single element in the said list:")
+  colors += "A"
+  colors += "B"
+  colors += "C"
+  println(colors)
+  println("Add multiple elements in the said list:")
+  colors ++= List("D","E","F")
+  println(colors) 
+  println("Convert the ListBuffer to a List:")
+  val colors_list = colors.toList
+  println(colors_list)   
+  }
+}
+ 
+ /**
+   * Q.3 WAP to remove single and multiple elements from a given listbuffer/List
+   */
+   
+object Scala_List
+{
+  import scala.collection.mutable.ListBuffer
+  def main(args: Array[String]): Unit = 
+ {
+  var colors = new ListBuffer[String]()
+  println("Remove Single element in the said list:")
+  colors += "A"
+  colors += "B"
+  colors += "C"
+  colors += "P"
+  colors += "Q"
+  colors += "R"
+  println(colors)
+  colors -= "R"
+  println(colors)
+  println("Remove multiple elements in the said list:")
+  colors --= List("C", "B")
+  println(colors) 
+  println("Convert the ListBuffer to a List:")
+  val colors_list = colors.toList
+  println(colors_list)   
+  }
+}
+ 
+ 
+ /**
+   * Q.4 WAP to delete elements from a given list.
+   */
+   
+   
+object Scala_List
+{
+  import scala.collection.mutable.ListBuffer
+  def main(args: Array[String]): Unit = 
+ {
+  var colors = new ListBuffer[String]()
+  println("Remove Single element in the said list:")
+  colors += "A"
+  colors += "B"
+  colors += "C"
+  colors += "P"
+  colors += "Q"
+  colors += "R"
+  println(colors)
+  colors.remove(0,5)
+  println(colors)
+  println("Convert the ListBuffer to a List:")
+  val colors_list = colors.toList
+  println(colors_list)   
+  }
+}
+  
+  
+   /**
+   * Q.5 WAP to iterate over a list to print the elements and calculate the sum and product of all elements of this list.
+   */
+   
+object Scala_List
+{
+  import scala.collection.mutable.ListBuffer
+  def main(args: Array[String]): Unit = 
+ {
+  var colors = new ListBuffer[Int]()
+  colors += 1
+  colors += 2
+  colors += 3
+  colors += 4
+  colors += 5
+  colors += 6
+  println(colors)
+  for (p<- colors)
+  println(p)
+  val result =colors.sum
+  println(result)
+  val result_1 =colors.product
+  println(result_1)
+  println("Convert the ListBuffer to a List:")
+  val colors_list = colors.toList
+  println(colors_list)   
+  }
+}   
+
+ /**
+   * Q.6 WAP to find the largest and smallest from a given List
+   */
+   
+object Scala_List
+{
+  import scala.collection.mutable.ListBuffer
+  def main(args: Array[String]): Unit = 
+ {  
+  var jj = new ListBuffer[Int]()
+  jj +=  12
+  jj +=  14   //B
+  jj +=  6
+  jj +=  4
+  jj +=  28
+  jj +=  30
+  println(jj)
+  val tmp=jj.max
+  println(tmp)
+  val tmp1=jj.min
+  println(tmp1)
+  
+  }
+}
+   
+    /**
+   * Q.7 WAP to remove duplicates from a given list
+   */
+   
+object Scala_List
+{
+  import scala.collection.mutable.ListBuffer
+  def main(args: Array[String]): Unit = 
+ {
+  var colors = new ListBuffer[Int]()
+  colors += 1
+  colors += 2
+  colors += 3
+  colors += 4
+  colors += 5
+  colors += 6
+  colors += 6
+  println(colors)
+  val result =colors.distinct
+  println(result)
+  println("Convert the ListBuffer to a List:")
+  val colors_list = colors.toList
+  println(colors_list)   
+  }
+}
+
+   /**
+   * Q.8 WAP to check a given list is empty or not
+   */
+   
+   
+object Scala_List
+{
+  import scala.collection.mutable.ListBuffer
+  def main(args: Array[String]): Unit = 
+ {
+  var colors = new ListBuffer[Int]()
+  colors += 1
+  colors += 2
+  colors += 3
+  colors += 4
+  colors += 5
+  colors += 6
+  colors += 6
+  println(colors)
+  val result =colors.isEmpty
+  println(result)
+  var jj = new ListBuffer[Int]()
+  val result_1 =jj.isEmpty
+  println(result_1)
+  println("Convert the ListBuffer to a List:")
+  val colors_list = colors.toList
+  println(colors_list)   
+  }
+}
+   
+   
+   /**
+   * Q.9 WAP to get difference between two given lists.
+   */
+   
+object Scala_List
+{ 
+  import scala.collection.mutable.ListBuffer
+  def main(args: Array[String]): Unit = 
+ {
+  var tt = new ListBuffer[Int]()
+  tt += 1
+  tt += 2  //A
+  tt += 3
+  tt += 4
+  tt += 5
+  tt += 6
+ 
+  println(tt)
+  
+  var jj = new ListBuffer[Int]()
+  jj +=  12
+  jj +=  14   //B
+  jj +=  6
+  jj +=  4
+  jj +=  28
+  jj +=  30
+  println(jj)
+  val tmp=jj.toSet
+  val result=tt.filterNot(tmp) //A-B
+  println(result)
+  val tmp1=tt.toSet
+  val result1=jj.filterNot(tmp1) //B-A
+  println(result1)
+  
+  println("Convert the ListBuffer to a List:")
+  val tt_list = tt.toList
+  println(tt_list)   
+  val jj_list = jj.toList
+  println(jj_list)   
+  }
+}
+   
+   
+    /**
+   * Q.10 WAP to find the first and last element of a given list
+   */
+   
+object Scala_List
+{
+  import scala.collection.mutable.ListBuffer
+  def main(args: Array[String]): Unit = 
+ {
+  var jj = new ListBuffer[Int]()
+  jj +=  12
+  jj +=  14   //B
+  jj +=  6
+  jj +=  4
+  jj +=  28
+  jj +=  30
+  println(jj)
+  val tmp=jj.head
+  println(tmp)
+  val tmp1=jj.last
+  println(tmp1)
+  
+  }
+}   
+
+/**
+   * Q.11 WAP to find the index of an element in a given list
+   */
+   
+   
+object Scala_List
+{
+  import scala.collection.mutable.ListBuffer
+  def main(args: Array[String]): Unit = 
+ {  
+  var jj = new ListBuffer[Int]()
+  jj +=  12
+  jj +=  14   //B
+  jj +=  6
+  jj +=  4
+  jj +=  28
+  jj +=  30
+  println(jj)
+  val tmp=jj.indexOf(30)
+  println(tmp) 
+  }
+}
+   
+   
+   /**
+   * Q.12 WAP to merge given lists
+   */
+   
+object Solution
+{
+  
+  def main(args: Array[String]): Unit = 
+ {
+  var tt =  List(1,2,3,4,5)
+  println(tt)
+  // merge list ++,:::,concat method
+  var jj = List(12,14,6,4,28,30)
+  println(jj)
+  val tmp=tt ++ jj
+  val tmp1=tt ::: jj
+  val tmp2=List.concat(tt,jj)
+  println(tmp)
+  println(tmp1)
+  println(tmp2)
+ 
+  }
+}   
+   
+   
+   /**
+   * Q.13 WAP to find the even and odd numbers from a given list
+   */
+   
+object Solution
+{
+  
+  def main(args: Array[String]): Unit = 
+ {
+  var tt =  List(1,2,3,4,5)
+  println(tt)
+  var jj = List(12,14,6,4,28,30)
+  println(jj)
+  val even_nums=tt.filter(_%2 ==0)
+  val odd_nums=tt.filter(_%2 !=0)
+  println(even_nums)
+  println(odd_nums)
+  }
+}   
+
+/**
+   * Q.14 WAP to find the nth element of a given list
+   */
+   
+object Solution
+{
+  def Pth_num[A](nums:List[A],n:Int):A={
+    nums(n)
+  }
+  def main(args: Array[String]): Unit = 
+ {
+  var nums=List(1,2,3,4,5,6)
+  println(nums)
+  println(Pth_num(nums,2))
+ 
+  }
+}   
+
+/**
+   * Q.15 WAP to find an element from the last position of a given list
+   */
+   
+object Solution
+{
+  def last_Pth_num[A](nums:List[A],n:Int):A={
+    nums.takeRight(n).head
+  }
+  def main(args: Array[String]): Unit = 
+ {
+  var nums=List(1,2,3,4,5,6)
+  println(nums)
+  println(last_Pth_num(nums,2))
+ 
+  }
+}   
+   
+   
+   /**
+   * Q.16 WAP to reverse a given list
+   */
+   
+   
+object Solution
+{
+  def main(args: Array[String]): Unit = 
+ {
+  var nums=List(1,2,3,4,5,6)
+  println(nums)
+  var k=nums.reverse
+  println(k)
+  }
+}   
+
+  /**
+   * Q.17 WAP to add each element n times to a given list of integers
+   */
+   
+   
+object Solution
+{
+  def n_times_elem[P](list:List[P],n:Int):List[P]={
+    list flatMap{element=>List.fill(n)(element)}
+  }
+ 
+  def main(args: Array[String]): Unit = 
+ {
+  var nums=List(1,2,3,4,5,6)
+ println(n_times_elem(nums,4))
+}
+}
+   
+   
+     /**
+   * Q.18 WAP to check whether a list contains a sublist
+   */
+   
+   
+object Solution
+{
+  def sublist[P](list1:List[P],list2:List[P]):Boolean={
+    list1.forall(list2.contains)
+  }
+ 
+  def main(args: Array[String]): Unit = 
+ {
+  var nums=List(1,2,3,4,5,6)
+ println(sublist(List(1,2,5), List(1,2,3,4)))
+}
+}
+   
+    /**
+   * Q.19 *WAP to count the number of occurrences of each element in a given list
+   */
+   
+   
+object Solution
+{
+  def main(args: Array[String]): Unit = 
+ {
+  var nums=List(1,2,3,4,5,6,6,6,7,9,7)
+  println(nums)
+  var v=nums.groupBy(identity).mapValues(_.size)
+  println(v)
+  }
+}   
+   
+   
+     /**
+   * Q.20 WAP to split a given list into two lists
+   */
+   
+   
+object Solution
+{
+  def split_List[P](nums:List[P],n:Int):(List[P],List[P])={
+    (nums.take(n),nums.drop(n))
+  }
+  def main(args: Array[String]): Unit = 
+ {
+  var nums=List(1,2,3,4,5,6)
+  println(nums)
+  println(split_List(nums,2))
+  }
+}
+   
+   
+     /**
+   * Q.21 WAP to calculate the length of a given list 
+   */
+   
+   
+object Solution
+{
+ 
+  def main(args: Array[String]): Unit = 
+ {
+  var nums=List(1,2,3,4,5,6)
+  println(nums)
+  var k=nums.length
+  println(k)
+  }
+}   
+   
