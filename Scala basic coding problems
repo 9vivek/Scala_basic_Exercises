@@ -151,4 +151,28 @@ object solution {
 }
 }
 
+
+/**
+   * Q.9 WAP to check a given integer and return true if it is within 20 of 100 or 300.
+   */
   
+  
+  object solution {
+    def difffromref(x:Int):Unit={
+        if ((x-100).abs<=20 ||(x-300).abs<=20){
+            println("The number is at correct difference from 100 or 300 !!!\n True");
+         }
+        else{
+             println("The number is  not at correct difference from 100 or 300 !!!\n False");
+        }
+           
+    }
+
+    def main(args: Array[String]) {
+       difffromref(80) 
+       difffromref(280) 
+       difffromref(800) 
+
+}
+}
+
