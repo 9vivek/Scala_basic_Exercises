@@ -1,0 +1,154 @@
+/**
+   * Q.1 WAP to print Hello World in Scala.
+   */
+
+object HelloWorld{
+    def main(args:Array[String]){
+        println("Hello World to Scala!!!")
+    }
+}
+
+/**
+   * Q.2 WAP to find sum of two numbers if the numbers are same then tripe the sum else get the sum of two numbers
+   */
+object solution{
+   def sumconditional(x:Int,y:Int):Int={
+       if(x==y) (x+y)*3 else x+y
+   }
+   
+   def main(args:Array[String]):Unit={
+       println("The sum is :"+ sumconditional(11,22))
+       println("The sum is :"+sumconditional(3,3))
+   }
+}
+
+
+/**
+   * Q.3 WAP to find absolute difference n and 51.if n>51 return triple the absolute difference else return the absolute difference.
+   */
+object solution{
+   def absdiff(n:Int):Int={
+       if(n>51) (n-51).abs*3 else (n-51).abs
+   }
+   
+   def main(args:Array[String]):Unit={
+       println("The difference is :"+ absdiff(50))
+       println("The difference is :"+ absdiff(52))
+   }
+}
+
+
+/**
+   * Q.4 WAP to check two given integers and return true if one of them is 30 or if their sum is 30.
+   */
+object solution{
+   def diff(x:Int,y:Int):Unit={
+       if(x+y ==30) {
+            println("True");
+         } 
+       else if (x==30 || y==30) {
+            println("True");
+         }
+        else {
+            println("False");
+        }
+   }
+   
+   def main(args:Array[String]):Unit={
+        diff(10,20)
+        diff(30,40)
+        diff(80,40)
+   }
+}
+
+
+/**
+   * Q.5 WAP to check whether a given positive number is a multiple of 3 or a multiple of 7.
+   */
+
+object solution {
+    def multiple_37(n:Int):Unit={
+        if (n%3==0 || n%7==0){
+            println("The given number is a multiple of 3 or 7");
+         }
+        else{
+             println("The given number is not a multiple of 3 or 7");
+        }
+           
+    }
+
+    def main(args: Array[String]) {
+       multiple_37(30) 
+       multiple_37(70)
+       multiple_37(29) 
+}
+}
+
+
+/**
+   * Q.6 WAP to check whether one of the given temperatures is less than 0 and other is greater than 100.
+   */
+
+object solution {
+    def temprature(x:Int,y:Int):Unit={
+        if (x<0 && y>100){
+            println("You have satisfied the temprature conditions!!!");
+         }
+        else{
+             println("You have not satisfied the temprature conditions! try again!");
+        }
+           
+    }
+
+    def main(args: Array[String]) {
+       temprature(-3,110) 
+
+}
+}
+
+/**
+   * Q.7 WAP to check the largest numbers among three given integers.
+   */
+
+
+object solution {
+    def greatest(x:Int, y:Int,z:Int):Int={
+        if (x>y && x>z) x
+        else if (y>x && y>z) y
+        else if (z>x && z>y) z 
+        else 0
+        
+    }
+
+    def main(args: Array[String]) {
+        print("The greatest number is: " + greatest(17,37,57));
+        print("\nThe greatest number is: " + greatest(30,18,13));
+        print("\nThe greatest number is: " + greatest(24,13,17));
+        print("\nThe greatest number is: " + greatest(90,69,130));
+    }
+}
+
+
+/**
+   * Q.8 WAP to check whether two given positive integers have the same last digit. 
+   */
+
+   
+   object solution {
+    def samelastdigit(x:Int,y:Int):Unit={
+        if ((x-y)%10==0){
+            println("The last digit of the both numbers are same!!!");
+         }
+        else{
+             println("The last digit of the both numbers are not same!!!");
+        }
+           
+    }
+
+    def main(args: Array[String]) {
+       samelastdigit(10034,4) 
+
+}
+}
+
+  
