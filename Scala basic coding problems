@@ -237,3 +237,38 @@ object solution {
 }
 }
 
+
+/**
+   * Q.12 WAP to find the larger value from two positive integer values in the range 20..30 inclusive,or return 0 if neither is in that range.
+   */
+   
+
+object solution {
+    def inrange(x:Int,y:Int):Unit={
+        if ((x>=20 && x<=30)  && (y>=20 && y<=30)){
+            println("The x and y  are in the range from 20 or 30 and the larger one is: !!!\n True");
+            if (x>y) {
+                println("The x is larger one : !!!" +x);    
+               
+         }
+         
+            else{
+                println("The y is larger one : !!!" +y)
+            }
+            
+        }
+        
+        if ((x<20 || x>30)  && (y<20 || y>30)){
+          println("you have entered values outside range please again put the values within the range")
+        } 
+        
+       
+    }
+
+    def main(args: Array[String]) {
+       inrange(27,26)
+       inrange(26,29)
+       inrange(34,35)
+
+}
+}
