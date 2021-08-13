@@ -1022,4 +1022,379 @@ object tt {
   }
 }
    
+   
+   /** 
+   * Q.11 WAP to check if a given number is present in first or last position of a given array of length 1 or more.
+    */
+    
+    
+object soultion{
+  def test(x:Int,nums:Array[Int]):Boolean={
+    if (nums.length<1) false
+    else{
+      nums.head==x ||nums.last ==x
+    }
+    
+  }
+  def main(args:Array[String]):Unit={
+    println("check if the given element is at the first or last position in the array");
+    var nums1=Array(23,45,67,89,467);
+    var n1 = 45;
+    println(s"Given number: ${n1}")
+    println(" Array elements are:")
+    for(x <- nums1){
+      println(s"$x,")
+    }
+    println("\nResult:" + test(n1,nums1));
+    var nums2=Array(57,73,37,69,667);
+    var n2 = 57;
+    println(s"Given number: ${n2}")
+    println("Array elements are:")
+    for(x <- nums2){
+      println(s"$x,")
+    }
+    println("\nResult:" + test(n2,nums2));
+    
+  }
+}    
 
+
+ /** 
+   * Q.12 WAP to check if the value of the first or last element of a given array (length 1 or more) are same or not.
+    */
+    
+    
+object soultion{
+  def test(x:Int,nums:Array[Int]):Boolean={
+    if (nums.length<1) false
+    else{
+      nums.head == nums.last 
+    }
+    
+  }
+  def main(args:Array[String]):Unit={
+    println("check if the first or last element in the array is same");
+    var nums1=Array(23,45,67,89);
+    var n1 = 23;
+    println(s"Given number: ${n1}")
+    println(" Array elements are:")
+    for(x <- nums1){
+      println(s"$x,")
+    }	
+    println("\nResult:" + test(n1,nums1));
+    var nums2=Array(57,73,37,69,667);
+    var n2 = 57;
+    println(s"Given number: ${n2}")
+    println("Array elements are:")
+    for(x <- nums2){
+      println(s"$x,")
+    }
+    println("\nResult:" + test(n2,nums2));
+    
+  }
+}    
+
+
+/** 
+   * Q.13 WAP to check whether the value of the first or last element of two given array(length 1 or more) of integers are same or not.
+    */
+
+
+object soultion{
+  def test(x:Array[Int],y:Array[Int]):Boolean={
+    if (x.length<1 || y.length<1) false
+    else{
+      (x.head == y.head) || (x.last == y.last) 
+    }
+    
+  }
+  def main(args:Array[String]):Unit={
+    var tt=Array(12,13,14,15);
+    var uv =Array(17,19,56,5);
+    println(test(tt,uv));
+    
+    
+  }
+}
+
+
+/** 
+   * Q.14 WAP to calculate sum of the last 3 elements of an array of integers.If the array length is less than 3 then return the sum of array.Return 0 if the array is empty.
+    */
+
+object soultion{
+  def sumcondi(arr:Array[Int]):Int={
+    if (arr.length<1) 0
+    else if (arr.length >0 && arr.length <3) arr.takeRight(2).sum
+    else arr.takeRight(3).sum
+  }
+  def main(args:Array[String]):Unit={
+    var nums1=Array(23,45,67,89);
+    println(" Array elements are:")
+    for(x <- nums1){
+      println(s"$x,")
+    }
+    println("\nResult:" + sumcondi(nums1));
+    var nums2=Array(23,45);
+    println(" Array elements are:")
+    for(x <- nums2){
+      println(s"$x,")
+    }
+    println("\nResult:" + sumcondi(nums2));
+    var nums3=Array(23);
+    println(" Array elements are:")
+    for(x <- nums3){
+      println(s"$x,")
+    }
+    println("\nResult:" + sumcondi(nums3));
+    
+    var nums_4:Array[Int]=Array()
+    println("\nResult:" + sumcondi(nums_4));
+  }
+}
+
+/** 
+   * Q.15 WAP to create a new array taking the middle element from three array of length 5.
+    */
+    
+
+object Solution {   
+   def tt(x: Array[Int], y: Array[Int], z: Array[Int]): Array[Int] = {
+    if (x.length != 5 || y.length != 5 || z.length != 5) throw new IllegalArgumentException("Array provieded is not of correct length!")  
+    else Array(x(2), y(2), z(2))
+  }   
+  
+   def main(args: Array[String]): Unit = {
+      var gt = tt(Array(11,24,38,40,78),Array(24,36,47,58,63),Array(30,42,57,69,72))
+     // Print all the array elements
+      println(" The Final Array:")
+        for ( x <- gt) {
+          print(s"${x}, ")        
+          }
+      } 
+ }
+ 
+ 
+ /** 
+   * Q.16 WAP to reverse an array of integers values.
+    */
+    
+ object Solution {   
+   def tt(nums: Array[Int]): Array[Int] = {
+    var temp = 0  
+    var temp1= 0
+    var index_position = 0
+    var index_last_position=nums.length-1
+    while(index_position < index_last_position){
+    temp = nums(index_position)
+    temp1 = nums(index_last_position)
+    nums(index_position)=temp1
+    nums(index_last_position)=temp
+    index_position += 1
+    index_last_position -= 1
+      }
+    nums
+  }
+  def main(args: Array[String]): Unit = {
+    var nums1 = Array(789, 235, 899, 146, 213) 
+    println("Orginal array:")
+    for ( x <- nums1) {
+       print(s"${x}, ")        
+     }           
+    var result1= tt(nums1)
+    println("\nReversed array:")
+    for ( x <- result1) {
+       print(s"${x}, ")        
+     }     
+ }
+}   
+
+
+ /** 
+   * Q.17 WAP to check two numbers,4 or 7present in a given array of integers.
+    */
+    
+    
+object solution{
+  def check(arr:Array[Int]):Boolean={
+    arr.exists(x=> x==4 || x==7)
+  }
+  
+  def main(args: Array[String]): Unit = {
+    var nums1 = Array(789, 235, 899, 146, 7) 
+    println("Orginal array:")
+    for ( x <- nums1) {
+       print(s"${x}, ")        
+     }           
+    println("\nThe 4 or 7 is present in the array:"+ check(nums1))
+
+}
+}
+    
+    
+     /** 
+   * Q.18 WAP to find the maximum value from first,middle and last values of a given array of integers.Array length should be 1 and more and odd.
+    */
+    
+object solution{
+  def check(nums:Array[Int]):Int={
+    if(nums.length==1) nums(0)
+      Array(nums(0),nums(nums.length/2),nums(nums.length-1)).max
+    
+  }
+  
+  def main(args: Array[String]): Unit = {
+    var nums1 = Array(789, 235, 899, 146, 7000) 
+    println("Orginal array:")
+    for ( x <- nums1) {
+       print(s"${x}, ")        
+     }           
+    println("\nMaximum value from first, middle and last values:"+ check(nums1))
+
+}
+} 
+
+
+     /** 
+   * Q.19 WAP to find the second largest element from a given array of integers.
+    */
+    
+object Solution{   
+   def main(args: Array[String]): Unit = {     
+       var tt = Array(789, 235, 899, 146, 7000);
+       println("Orginal array:")
+       for ( x <- tt) {
+         print(s"${x}, ")        
+        }      
+     scala.util.Sorting.quickSort(tt)
+     var ind = tt.length-1;
+     while(tt(ind)==tt(tt.length-1)){
+       ind=ind-1
+       }     
+     println("\nSecond largest value of the array: " + tt(ind));      
+   }
+ }
+
+
+   /** 
+   * Q.20 WAP to find the second smallest element from a given array of integers.
+    */
+ 
+ object solution{
+  def main(args: Array[String]): Unit = {
+    var nums = Array(789, 235, 899, 146, 7000) 
+    println("Orginal array:")
+    for ( x <- nums) {
+       print(s"${x}, ")        
+     }           
+    
+    var min = Int.MaxValue 
+    var sec_min = Int.MaxValue
+    // Good Logic
+    for (i <- 0 to nums.length-1)
+      {
+       if(nums(i)==min){
+        sec_min=min;
+      } else if (nums(i) < min) {
+          sec_min = min;
+          min = nums(i);
+      } else if (nums(i) < sec_min) {
+          sec_min = nums(i);
+        }
+    }    
+    println("\nsecond lowest value of the array is:"+ sec_min);
+}
+}
+
+
+/** 
+   * Q.21 WAP to find the number of even and odd integers in a given array of integers.
+    */
+    
+
+object Solution{   
+   def main(args: Array[String]): Unit = {     
+       var tt = Array(789, 235, 899, 146, 7000);
+       println("Orginal array:")
+       for ( x <- tt) {
+         print(s"${x}, ")        
+        }      
+      var ctr =0;
+      for(i <- 0 to tt.length -1){
+        if(tt(i)%2 ==0){
+          ctr =ctr +1;
+        }
+      }
+     println("\nThe numbers of even values are: " + ctr);  
+     println("\nThe numbers of odd values are: " + (tt.length-ctr));  
+   }
+ }
+ 
+ 
+ /** 
+   * Q.22 WAP to compute the average value of an array element except the largest and smallest values.
+    */
+    
+ 
+ object Solution{   
+   def main(args: Array[String]): Unit = {     
+       var tt = Array(789, 235, 899, 146, 7000);
+       println("Orginal array:")
+       for ( x <- tt) {
+         print(s"${x}, ")        
+        }      
+       var max = tt(0)
+	     var min = tt(0)
+	     var sum: Double = 0
+	     for (i <- 0 to tt.length - 1)
+	{
+		   sum = sum + tt(i);
+		   if(tt(i) > max)
+			  max = tt(i);
+		   else if(tt(i) < min)
+			  min = tt(i);
+	}
+	val x: Double = ((sum-max-min) / (tt.length - 2));
+	println(s"\nAverage value the array elements except the largest and smallest values: ${x}");
+   }
+ }
+ 
+ 
+ /** 
+   * Q.23 WAP to find maximum product of two integers in  a given array of integers.Input:{2,3,5,7,-7,8,-5} Pair(7,8) product:56
+*/
+
+
+object Solution{  
+  def find_max_prod(tt: Array[Int]): Unit = {
+    
+    var max_pair_prod = Integer.MIN_VALUE;
+		var max_i = -1
+    var max_j = -1;
+
+		for ( i<- 0 to tt.length - 1)
+    {
+			for (j<- i + 1 to  tt.length - 1)
+			{
+				if (max_pair_prod < tt(i) * tt(j))
+				{
+					max_pair_prod = tt(i) * tt(j);
+					max_i = i;
+					max_j = j;
+				}
+			}
+		}
+
+		println(s"\nPair is (${tt(max_i)} , ${tt(max_j)}), \nMaximum Product:  ${(tt(max_i)*tt(max_j))}");
+  }
+   def main(args: Array[String]): Unit = {     
+       var tt = Array(789, 235, 899, 146, 7000);
+       println("Orginal array:")
+       for ( x <- tt) {
+         print(s"${x}, ")        
+        }      
+       find_max_prod(tt);
+   }
+ }
+ 
+ 
