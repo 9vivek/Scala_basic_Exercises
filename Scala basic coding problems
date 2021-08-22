@@ -1398,3 +1398,280 @@ object Solution{
  }
  
  
+  /** String
+   * Q.1 WAP to get the character at the given index within a given String. Also print the length of the string.
+*/
+
+
+object tt {
+  def main(args: Array[String]): Unit = {
+    var str = "Vivek Shukla!";
+    println("The String is = " + str);
+  
+    var index1 = str.charAt(0);
+    var index2 = str.charAt(4);
+    var index3 = str.charAt(10);
+    println("The character at position 0 is:" + index1);
+    println("The character at position 4 is:"+index2);
+    println("The character at position 10 is:"+index3);
+    println(s"Length of the string: ${str.length}")
+  }
+}
+
+ /** String
+   * Q.2 WAP to get the character (Unicode code point) at the given index within the String.
+*/
+
+
+object tt {
+  def main(args: Array[String]): Unit = {
+    val str = "vivek shukla";
+    println("The String is = " + str);
+    val val1 = str.codePointAt(1);
+    val val2 = str.codePointAt(11);
+    println("Character(unicode point) = " + val1);
+    println("Character(unicode point) = " + val2);
+  }
+}
+
+ /** String
+   * Q.3 WAP to compare two strings lexicographically.
+   Note: Two strings are lexicographically equal if they are the same length and contain the same characters in the same positions.
+*/
+
+object tt {
+
+  def test(str1: String, str2: String): String = {
+  
+    val result = str1.compareTo(str2);
+
+    
+    if (result < 0) {
+      ("\"" + str1 + "\"" +
+        " is less than " +
+        "\"" + str2 + "\"");
+    } else if (result == 0) {
+      ("\"" + str1 + "\"" +
+        " is equal to " +
+        "\"" + str2 + "\"");
+    } else {
+      ("\"" + str1 + "\"" +
+        " is greater than " +
+        "\"" + str2 + "\"");
+    }
+  }
+
+  def main(args: Array[String]): Unit = {
+    var str1 = "ASCII stands for American Standard Code for Information Interchange.";
+    var str2 = "ASCII stands for American Standard Code for Information Interchange.";
+
+    println("String 1: " + str1);
+    println("String 2: " + str2);
+
+    var result = test(str1, str2)
+    println(result)
+    println("========================")
+    str1 = "Java actually uses Unicode, which includes ASCII";
+    str2 = " Java actually uses Unicode, which includes ASCII";
+
+    println("String 1: " + str1);
+    println("String 2: " + str2);
+    result = test(str1, str2)
+    println(result)
+    
+}
+}
+
+ /** 
+   * Q.4 WAP to concatenate a given string to the end of another string
+*/
+
+object tt {
+  def main(args: Array[String]): Unit = {
+    val str1 = "Preeti Jaduan ";
+    val str2 = " is a biotechnology final year student";
+    println("The strings are:")
+    println("String 1: " + str1);
+    println("String 2: " + str2);
+    val str3 = str1.concat(str2);
+    println("The concatenated string: " + str3);
+  }
+}
+
+ /** 
+   * Q.5 WAP to test if a given string contains the specified sequence of char values.
+*/
+
+object tt {  
+  def uv(str1: String, str2: String): Boolean = {
+    str1.contains(str2)   
+  }
+  def main(args: Array[String]): Unit = {
+        var str1 = "Dialysis organ transplant and surgery ";
+        var str2 = "and";
+        println("The String is: " + str1);
+        println("Specified sequence of char values: " + str2);
+        println("check if string contains the specified sequence of char values!");
+        println(uv(str1, str2));
+      }
+}
+
+/** 
+   * Q.6 WAP to create a new String object with the contents of a character array.
+*/
+
+object tt {
+  def main(args: Array[String]): Unit = {
+    val nums = Array('1', '2', '3', '4', '5', '6');
+    val str = String.copyValueOf(nums, 1, 4);
+    println("\nThe book contains " + str + " pages.\n");
+  }
+}
+
+/** 
+   * Q.7 WAP to check whether a given string ends with the contents of another string.
+*/
+
+object tt {  
+  def test(str: String, end_str: String): Boolean = {
+    str.endsWith(end_str)   
+  }
+  def main(args: Array[String]): Unit = {
+        val str1 = "Java Exception Handling";
+        val str2 = "Java Exception HandlinG";
+        val end_str = "ng";
+        val ends1 = test(str1, end_str)
+        val ends2 = test(str2, end_str)
+        println("Str1 ends with end_str:" + ends1);
+        println("Str2 ends with end_str:" + ends2);
+      }
+}
+
+
+/** 
+   * Q.8 WAP to to check whether two String objects contain the same data.
+*/
+
+object tt {  
+  def test(str1: String, str2: String): Boolean = {
+    str1.equals(str2)   
+  }
+  def main(args: Array[String]): Unit = {
+        val names1 = "Navya";
+        val names2 = "Shristi";
+        val names3 = "Navya";
+        val equals1 = test(names1,names2);
+        val equals2 = test(names1,names3);
+        println("names1 is equal to names2:"+ equals1);
+        println("names1 is equal to names3:"+ equals2);
+      }
+}
+
+/** 
+   * Q.9 WAP to compare a given string to another string, ignoring case considerations.
+*/
+
+object tt {  
+  def test(str1: String, str2: String): Boolean = {
+    str1.equalsIgnoreCase(str2)   
+  }
+  def main(args: Array[String]): Unit = {
+        val names1 = "Navya";
+        val names2 = "Shristi";
+        val names3 = "NavyA";
+        val equals1 = test(names1,names2);
+        val equals2 = test(names1,names3);
+        println("names1 is equal to names2:"+ equals1);
+        println("names1 is equal to names3:"+ equals2);
+      }
+}
+
+/** 
+   * Q.10 WAP to replace a specified character with another character
+*/
+
+object tt {
+  def main(args: Array[String]): Unit = {
+    val str = "Bharat Chaudhary";
+    val new_str = str.replace('a', 'j');
+    println("The string is: " + str);
+    println("Replaced String is: " + new_str);
+  }
+}
+
+/** 
+   * Q.11 WAP to get a substring of a given string between two specified positions.
+*/
+
+object tt {
+  def main(args: Array[String]): Unit = {
+    val str = "This site uses cookies to deliver our services and to show you relevant ads..";
+    val new_str = str.substring(10, 20);
+    println("Original = " + str);
+    println("Substring between two positions (10,26) = " + new_str);
+
+  }
+}
+
+/** 
+   * Q.12 WAP to convert all the characters to lowercase, uppercase strings.
+*/
+
+object tt{
+
+  def main(args: Array[String]): Unit = {
+    val str = "This site uses cookies to deliver our services and to show you relevant ads. ";
+    val upperStr = str.toUpperCase();
+    val lowerStr = str.toLowerCase();
+    println("Original String: " + str);
+    println("String in lowercase: " + lowerStr);
+    println("String in uppercase: " + upperStr);
+  }
+}
+
+
+/** 
+   * Q.13 WAP to trim any leading or trailing whitespace from a given string
+*/
+
+object tt {
+  def main(args: Array[String]): Unit = {
+    {
+      val str = " Java Exercises ";
+      val new_str = str.trim();
+      println("String is:-" + str);
+      println("New String:-" + new_str);
+    }
+  }
+}
+
+/** 
+   * Q.14 WAP to find the maximum occurring character in a string
+*/
+
+object tt {
+  def MaxOcChar(str1: String): Char = {
+    val N = 256;
+    val ctr = new Array[Int](N);
+    val l = str1.length();
+    for (i <- 0 to l - 1)
+      ctr(str1.charAt(i)) = ctr(str1.charAt(i)) + 1;
+    var max = -1;
+    var result = ' ';
+    for (i <- 0 to l - 1) {
+      if (max < ctr(str1.charAt(i))) {
+        max = ctr((str1.charAt(i)))
+        result = str1.charAt(i)
+      }
+    }
+    result
+  }
+  def main(args: Array[String]): Unit = {
+    val str1 = "test string"
+    println("The given string is: " + str1)
+    println(
+      "Maximum occurring character of the said string is: " + MaxOcChar(str1)
+    );
+   
+  }
+}
