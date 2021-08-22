@@ -1675,3 +1675,365 @@ object tt {
    
   }
 }
+
+
+
+/** 
+   * Q.15 ** WAP to print after removing duplicates from a given string.
+*/
+
+object tt {
+
+  def rmDupliChar(s: String): String = {
+    val arr1 = s.toCharArray();
+    var targetStr = "";
+    for (value <- s) {
+      if (targetStr.indexOf(value) == -1) {
+        targetStr += value;
+      }
+    }
+    return targetStr;
+  }
+
+  def main(args: Array[String]): Unit = {
+    var str1 = "digitalindia";
+    println("The given string is: " + str1);
+    System.out.println("After removing duplicates characters the new string is: " + rmDupliChar(str1)
+    
+   
+   
+    );
+  }
+}
+
+/** 
+   * Q.16 WAP to reverse every word in a given string.
+*/
+
+object tt{
+  def WordsInReverse(str1: String): String = {
+    val each_words = str1.split(" ");
+    var revString = "";
+    for (i <- 0 to each_words.length - 1) {
+      val word = each_words(i);
+      var reverseWord = "";
+      for (j <- word.length - 1 to 0 by -1) {
+        reverseWord = reverseWord + word.charAt(j);
+      }
+      revString = revString + reverseWord + " " ;
+    }
+    revString;
+  }
+
+  def main(args: Array[String]): Unit = {
+    val str1 = "This is a volcano";
+    println("The given string is: " + str1);
+    println("The new string after reversed the words: " + WordsInReverse(str1));
+  }
+}
+
+/** 
+   * Q.17 WAP to count and print all the duplicates in the input string.
+*/
+
+object tt {
+
+  def showDuplicates(str1: String): Unit = {
+    val MAX_CHARS = 256;
+    val ctr = new Array[Int](MAX_CHARS);
+    for (i <- 0 to str1.length - 1)
+      ctr(str1.charAt(i)) = ctr(str1.charAt(i)) + 1;
+    for (i <- 0 to MAX_CHARS - 1)
+      if (ctr(i) > 1)
+        printf("%c  appears  %d  times\n", i, ctr(i));
+  }
+
+  def main(args: Array[String]): Unit = {
+    val str1 = "gujarat";
+    println("The given string is: " + str1);
+    println("The duplicate characters and counts are: ");
+    showDuplicates(str1);
+   
+  }
+}
+
+/** 
+   * Q.18 WAP to check if two given strings are rotations of each other.
+*/
+
+object tt {
+
+  def checkForRotation(str1: String, str2: String): Boolean = {
+    return (str1.length == str2.length) && ((str1 + str1).indexOf(str2) != -1);
+  }
+
+  def main(args: Array[String]): Unit = {
+    val str1 = "PQRST";
+    val str2 = "QSRST";
+    println("The given strings are: " + str1 + "  and  " + str2);
+    println("\nThe concatination of 1st string twice is: " + str1 + str1
+    );
+
+    if (checkForRotation(str1, str2)) {
+      println("The 2nd string " + str2 + "  exists in the new string."
+      );
+      println("\nStrings are rotations of each other");
+    } 
+    else {
+      println("The 2nd string " + str2 + "  not exists in the new string.");
+      printf("\nStrings are not rotations of each other");
+    }
+  }
+}
+
+/** 
+   * Q.19 WAP to append two given strings such that, if the concatenation creates double characters then omit one of the characters.
+*/
+
+object tt {
+
+  def conCat(str1: String, str2: String): String = {
+    if (str1.length != 0 && str2.length != 0
+        && str1.charAt(str1.length() - 1) == str2.charAt(0))
+      return str1 + str2.substring(1);
+    return str1 + str2;
+  }
+
+  def main(args: Array[String]): Unit = {
+    val str1 = "vivek";
+    val str2 = "kshukla";
+    println("The given strings are: " + str1 + "  and  " + str2);
+    println("The string after concatination are: " + conCat(str1, str2));
+  }
+}
+
+
+/** 
+   * Q.20 WAP to create a new string from a given string swapping the last two characters of the given string. The length of the given string must be two or more.
+*/
+
+object tt {
+  def lastTwo(str1: String): String = {
+    if (str1.length() < 2) return str1;
+    return str1.substring(0, str1.length - 2) + str1.charAt(str1.length - 1) + str1
+      .charAt(str1.length - 2);
+  }
+  def main(args: Array[String]): Unit = {
+    var str1 = "vivek";
+    println("The given strings is: " + str1);
+    println("The string after swap last two characters are: " + lastTwo(str1));
+    
+  }
+}
+
+/** 
+   * Q.21 WAP to read a string and return true if it ends with a specified string of length 2.
+*/
+
+object tt{
+  def test(str1: String, end_str: String): Boolean = {
+    val len = str1.length
+    val vk = end_str
+    if (len < 2)
+      false
+    else if (vk.equals(str1.substring(len - 2, len)))
+      true;
+    else
+      false
+  }
+  def main(args: Array[String]): Unit = {
+    var str1 = "Surgery";
+    var end_str = "ry"
+    println("The strings is: " + str1)
+    println("The string containing " + end_str + " at last: " + test(str1, end_str))
+  
+  }
+}
+
+/** 
+   * Q.22 WAP to read two strings append them together and return the result. If the length of the strings is different remove characters from the beginning of longer
+   string and make them equal length.
+*/
+
+object tt {
+
+  def tk(str1: String, str2: String): String = {
+    if (str1.length == str2.length)
+      return str1 + str2;
+    if (str1.length > str2.length) {
+      var diff = str1.length - str2.length;
+      str1.substring(diff, str1.length) + str2;
+    } else {
+      var diff = str2.length - str1.length;
+      str1 + str2.substring(diff, str2.length);
+    }
+  }
+  def main(args: Array[String]): Unit = {
+    var str1 = "updated";
+    var str2 = "successfully";
+    println("The given strings is: " + str1 + " and " + str2);
+    println("The new string is: " + tk(str1, str2));
+    
+} 
+}
+
+/** 
+   * Q.23 WAP to create a new string taking specified number of characters from first and last position of a given string. 
+*/
+
+object tt {
+
+  def tk(str1: String, n: Int): String = {
+    str1.substring(0, n) + str1.substring(str1.length - n, str1.length);
+  }
+
+  def main(args: Array[String]): Unit = {
+    var str1 = "javascript programming ";
+    var n1 = 4;
+    println("The given strings is: " + str1);
+    println("The given numbers is: " + n1);
+    println("The new string is: " + tk(str1, n1));
+  }
+}
+
+/** 
+   * Q.24 WAP to check whether the first two characters present at the end of a given string.
+*/
+
+object tt {
+
+  def tk(str1: String): Boolean = {
+   if (str1.length < 2)
+    return false;
+  else if (str1.substring(0,2).equals(str1.substring(str1.length-2, str1.length)))
+    return true;
+  else
+    return false;
+  }
+
+  def main(args: Array[String]): Unit = {
+      var str1 =  "vistjkhuguoojgdjjhavhsbvhdkvi";	  
+      println("The given strings is: "+str1);
+      println("If first two characters present in the last!!! "+tk(str1));
+      
+  }
+} 
+
+/** 
+   * Q.25 WAP to read a string and return the string without the first two characters. Keep the first char if it is 'g' and keep the second char if it is 'h'.
+*/
+
+object tt {
+  def tk(str1: String): String = {
+    var len = str1.length;
+    var temp = "";
+    for (i <- 0 to len - 1) {
+      if (i == 0 && str1.charAt(i) == 'g')
+        temp += 'g';
+      else if (i == 1 && str1.charAt(i) == 'h')
+        temp += 'h';
+      else if (i > 1)
+        temp += str1.charAt(i);
+    }
+    return temp;
+  }
+  def main(args: Array[String]): Unit = {
+    var str1 = "ganesha";
+    println("The given strings is: " + str1);
+    println("The new string is: " + tk(str1));
+  }
+}
+
+/** 
+   * Q.26 WAP to read a string and if one or both of the first two characters is equal to specified character return without those characters 
+          otherwise return the string unchanged
+*/
+
+object tt {
+  def tk(str1: String, c: Char): String = {
+    var temp = "";
+    for (i <- 0 to str1.length - 1) {
+      if (i == 0 && str1.charAt(i) != c)
+        temp += str1.charAt(i);
+      else if (i == 1 && str1.charAt(i) != c)
+        temp += str1.charAt(i);
+      else if (i > 1)
+        temp += str1.charAt(i);
+    }
+    return temp;
+  }
+
+  def main(args: Array[String]): Unit = {
+    var str1 = "bryophyte";
+    var c = 'r'
+    println("The given strings is: " + str1);
+    println("The specified character is:"+c);
+    println("The final string is: " + tk(str1, c));
+  }
+}
+
+/** 
+   * Q.27 WAP to read a string and returns after remove a specified character and its immediate left and right characters.
+*/
+
+object tt {
+  def tk(str1: String, c: Char): String = {
+    var len = str1.length;
+    var rS = "";
+    for (i <- 0 to len - 1) {
+      if (i == 0 && str1.charAt(i) != c)
+        rS += str1.charAt(i);
+      if (i > 0 && str1.charAt(i) != c && str1.charAt(i - 1) != c)
+        rS += str1.charAt(i);
+      if (i > 0 && str1.charAt(i) == c && str1.charAt(i - 1) != c)
+        rS = rS.substring(0, rS.length() - 1);
+    }
+    return rS;
+  }
+  def main(args: Array[String]): Unit = {
+    var str1 = "test#string";
+    var c = '#'
+    println("The given strings is: " + str1);
+    println("The new string is: " + tk(str1, c));
+    str1 = "sdf$#gyhj#";
+    c = '$'
+    println("The given strings is: " + str1);
+    println("The new string is: " + tk(str1, c));
+  }
+}
+
+/** 
+   * Q.28 WAP to check two given strings whether any one of them appear at the end of the other string (ignore case sensitivity)
+*/
+
+object tt {
+  def tk(str1: String, str2: String): Boolean = {
+    var st1 = str1.toLowerCase();
+    var aLen = str1.length;
+    var st2 = str2.toLowerCase;
+    var bLen = st2.length();
+    if (aLen < bLen) {
+      var temp = st2.substring(bLen - aLen, bLen);
+      if (temp.compareTo(st1) == 0)
+        true;
+      else
+        false;
+    } else {
+      var temp = st1.substring(aLen - bLen, aLen);
+      if (temp.compareTo(st2) == 0)
+        true;
+      else
+        false;
+    }
+  }
+  def main(args: Array[String]): Unit = {
+    var str1 = "abcdefg";
+    var str2 = "sdfsfsdfsfsdfabcdefg";
+    println("The given strings are: " + str1 + "  and " + str2);
+    println("Is one string appears at the end of other? " + tk(str1, str2));
+  }
+}
+
+
+
+
